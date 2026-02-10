@@ -1,0 +1,1464 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+:root {
+    --primary-color: #4361ee;
+    --primary-light: #6088ff;
+    --primary-dark: #2c45b3;
+    --secondary-color: #ff6b6b;
+    --secondary-light: #ff9e9e;
+    --secondary-dark: #e54b4b;
+    --accent-color: #f9c74f;
+    --text-dark: #2d3748;
+    --text-medium: #4a5568;
+    --text-light: #718096;
+    --background-light: #f7fafc;
+    --background-medium: #edf2f7;
+    --background-dark: #1a202c;
+    --white: #ffffff;
+    --success: #48bb78;
+    --warning: #ed8936;
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --hover-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1), 0 10px 15px -5px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease;
+    --border-radius: 12px;
+    --border-radius-lg: 16px;
+    --border-radius-sm: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+}
+
+.app-page-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* 頂部橫幅 */
+
+.app-banner {
+    background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
+    color: var(--white);
+    padding: 120px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.app-banner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.7;
+}
+
+.banner-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.app-banner h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-banner p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.banner-cta {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.cta-button {
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button.primary {
+    background-color: var(--white);
+    color: var(--primary-dark);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+.cta-button.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+/* 通用部分樣式 */
+
+.app-section {
+    padding: 60px 40px;
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-header h2 {
+    font-size: 2.4rem;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.section-header h2:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-medium);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 修改specific headers to match exact title width */
+
+.app-section .section-header h2 {
+    width: auto;
+}
+
+/* 優勢部分 */
+
+.advantages-section {
+    background-color: var(--white);
+}
+
+/* 單張APP圖片顯示樣式 - 針對移動端優化 */
+
+.advantages-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+    margin-top: 50px;
+    position: relative;
+}
+
+.advantage-image {
+    flex: 1;
+    min-width: 280px;
+    max-width: 320px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.app-showcase-gallery {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 320px;
+    padding: 10px;
+}
+
+.app-showcase-img.single-app {
+    position: relative;
+    max-width: 90%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transform: rotate(-3deg);
+    transition: all 0.4s ease;
+    z-index: 2;
+    display: block;
+    margin: 0 auto;
+}
+
+.app-showcase-img.single-app:hover {
+    transform: translateY(-8px) rotate(-1deg);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+}
+
+.app-showcase-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at center, transparent 40%, rgba(245, 247, 250, 0.05) 100%);
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* 確保右側內容不被遮蓋 */
+
+.advantage-content {
+    flex: 1.5;
+    min-width: 300px;
+    padding-left: 10px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.advantage-card {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    background-color: var(--background-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+}
+
+.advantage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.advantage-icon {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+
+.advantage-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.advantage-text h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--primary-dark);
+}
+
+.advantage-text p {
+    font-size: 0.95rem;
+    color: var(--text-medium);
+    line-height: 1.5;
+}
+
+/* 行業亮點樣式調整 */
+
+.industry-highlights {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    clear: both;
+    /* 確保不與其他元素重疊 */
+    position: relative;
+    z-index: 3;
+}
+
+.highlight-text {
+    font-size: 1.1rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* APP類型部分 */
+
+.types-section {
+    background-color: var(--background-medium);
+    position: relative;
+    overflow: hidden;
+}
+
+.types-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.app-types-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.app-type-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 380px;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+}
+
+.app-type-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--hover-shadow);
+}
+
+.type-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.type-header h3 {
+    font-size: 1.3rem;
+    color: var(--primary-dark);
+    text-align: center;
+    width: 100%;
+}
+
+.type-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    margin: 0 auto;
+}
+
+.type-icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+.type-description {
+    margin-bottom: 15px;
+    color: var(--text-medium);
+    font-size: 0.95rem;
+}
+
+.type-features {
+    list-style: none;
+    padding: 0;
+}
+
+.type-features li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 25px;
+    color: var(--text-medium);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.type-features li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* 解決方案網格 */
+
+.solutions-container {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    margin-top: 30px;
+}
+
+.solutions-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.solutions-header h3 {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.solution-item {
+    background-color: var(--background-light);
+    padding: 15px;
+    border-radius: var(--border-radius-sm);
+    text-align: center;
+    transition: var(--transition);
+    border-left: 3px solid var(--primary-color);
+}
+
+.solution-item:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: var(--card-shadow);
+    border-left-color: var(--secondary-color);
+}
+
+.solution-item span {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* 開發流程部分 */
+
+.process-section {
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.process-timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto 50px;
+    padding-left: 40px;
+}
+
+.process-timeline:before {
+    display: none;
+}
+
+.process-step {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 40px;
+}
+
+.process-step:last-child {
+    margin-bottom: 0;
+}
+
+.step-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background-color: var(--white);
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    box-shadow: 0 0 0 5px rgba(67, 97, 238, 0.1);
+}
+
+.step-icon svg {
+    width: 20px;
+    height: 20px;
+    color: var(--primary-color);
+}
+
+.step-content {
+    background-color: var(--background-light);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    width: 100%;
+}
+
+.process-step:hover .step-content {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.step-content h3 {
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.step-content p {
+    color: var(--text-medium);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+.step-number {
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.step-connector {
+    display: none;
+}
+
+.process-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.process-highlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.highlight-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    box-shadow: 0 10px 15px rgba(67, 97, 238, 0.2);
+}
+
+.highlight-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.process-highlight-item p {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+}
+
+/* 程式開發價目表樣式 */
+
+.pricing-section {
+    background-color: var(--white);
+    position: relative;
+    padding-bottom: 80px;
+}
+
+.pricing-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--background-medium);
+}
+
+.pricing-tab {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    background: transparent;
+    border: none;
+    color: var(--text-medium);
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition);
+}
+
+.pricing-tab.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.pricing-tab.active:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 3px 3px 0 0;
+}
+
+.pricing-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.pricing-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 380px;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: var(--transition);
+    position: relative;
+    border: 1px solid var(--background-medium);
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--hover-shadow);
+}
+
+.pricing-card.highlighted {
+    transform: scale(1.05);
+    border-color: var(--primary-light);
+    box-shadow: 0 15px 30px rgba(67, 97, 238, 0.15);
+    z-index: 1;
+}
+
+.pricing-card.highlighted:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.pricing-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.pricing-card-header {
+    padding: 20px 30px;
+    background: linear-gradient(135deg, var(--background-light), var(--white));
+    text-align: center;
+    border-bottom: 1px solid var(--background-medium);
+}
+
+.pricing-card-header h3 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.pricing-card.highlighted .pricing-card-header h3 {
+    color: var(--primary-dark);
+}
+
+.pricing-amount {
+    margin-bottom: 8px;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.pricing-card.highlighted .price {
+    color: var(--primary-dark);
+}
+
+.term {
+    font-size: 1rem;
+    color: var(--text-medium);
+    margin-left: 5px;
+}
+
+.pricing-card-header p {
+    font-size: 0.95rem;
+    color: var(--text-medium);
+    line-height: 1.5;
+}
+
+.pricing-card-content {
+    padding: 20px 30px;
+}
+
+.pricing-card-content h4 {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: var(--text-medium);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.pricing-features li svg {
+    width: 18px;
+    height: 18px;
+    color: var(--primary-color);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.pricing-card.highlighted .pricing-features li svg {
+    color: var(--primary-dark);
+}
+
+/* 移動應用開發價格表 */
+
+.mobile-app-pricing-table {
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: var(--background-light);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+.mobile-app-pricing-table h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.95rem;
+}
+
+.pricing-table th,
+.pricing-table td {
+    padding: 15px;
+    border-bottom: 1px solid var(--background-medium);
+    text-align: left;
+}
+
+.pricing-table th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: 600;
+}
+
+.pricing-table th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.pricing-table th:last-child {
+    border-top-right-radius: 8px;
+}
+
+.pricing-table tr:last-child td {
+    border-bottom: none;
+}
+
+.pricing-table tr:hover td {
+    background-color: rgba(67, 97, 238, 0.05);
+}
+
+.tech-solutions-container {
+    max-width: 1000px;
+    margin: 40px auto 0;
+    background-color: var(--background-light);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+.tech-solutions-container h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.tech-solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.tech-solution-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background-color: var(--white);
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition);
+    border-left: 3px solid var(--primary-color);
+}
+
+.tech-solution-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-shadow);
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-left-color: var(--secondary-color);
+}
+
+.tech-solution-item svg {
+    width: 24px;
+    height: 24px;
+    color: var(--primary-color);
+}
+
+.tech-solution-item:hover svg {
+    color: var(--white);
+}
+
+.tech-solution-item span {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.pricing-note {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.pricing-note p {
+    font-size: 0.95rem;
+    color: var(--text-medium);
+    margin-bottom: 15px;
+}
+
+.contact-quote-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 8px 15px rgba(67, 97, 238, 0.2);
+}
+
+.contact-quote-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(67, 97, 238, 0.3);
+}
+
+.contact-quote-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* 聯繫我們部分 */
+
+.contact-section {
+    background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
+    color: var(--white);
+    text-align: center;
+    border-radius: var(--border-radius-lg);
+    margin: 30px 40px;
+    padding: 60px 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.contact-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.contact-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 25px;
+    opacity: 0.9;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.contact-button {
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-button.primary {
+    background-color: var(--white);
+    color: var(--primary-dark);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-button.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contact-button.secondary {
+    background-color: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+.contact-button.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+/* 動畫效果 */
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* 移動設備響應優化 */
+
+@media (max-width: 992px) {
+    .advantages-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .advantage-image {
+        margin: 0 auto 20px;
+        max-width: 70%;
+        order: 1;
+    }
+    .advantage-content {
+        width: 100%;
+        padding-left: 0;
+        order: 2;
+    }
+    .app-showcase-gallery {
+        max-height: 280px;
+    }
+    .app-showcase-img.single-app {
+        max-width: 85%;
+    }
+}
+
+/* 響應式調整 */
+
+@media (max-width: 1024px) {
+    .app-banner h1 {
+        font-size: 2.8rem;
+    }
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+    .advantage-card {
+        padding: 15px;
+    }
+    .advantage-icon {
+        width: 45px;
+        height: 45px;
+    }
+    .advantage-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+    .pricing-card {
+        min-width: 280px;
+    }
+    .tech-solutions-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .app-banner {
+        padding: 80px 20px;
+    }
+    .app-banner h1 {
+        font-size: 2.4rem;
+    }
+    .app-banner p {
+        font-size: 1.1rem;
+    }
+    .app-section {
+        padding: 60px 20px;
+    }
+    .advantage-image {
+        max-width: 60%;
+    }
+    .app-showcase-gallery {
+        max-height: 250px;
+    }
+    .app-showcase-img.single-app {
+        max-width: 85%;
+        transform: none;
+        border-radius: 8px;
+    }
+    .app-showcase-img.single-app:hover {
+        transform: translateY(-3px);
+    }
+    .advantage-card {
+        padding: 12px;
+    }
+    .advantage-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .advantage-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+    .advantage-text h3 {
+        font-size: 1.1rem;
+    }
+    .advantage-text p {
+        font-size: 0.9rem;
+    }
+    .contact-section {
+        margin: 20px;
+        padding: 60px 20px;
+    }
+    .contact-content h2 {
+        font-size: 2rem;
+    }
+    .solutions-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    .pricing-card.highlighted {
+        transform: scale(1);
+    }
+    .pricing-card.highlighted:hover {
+        transform: translateY(-10px);
+    }
+    .pricing-card {
+        max-width: 100%;
+    }
+    .tech-solutions-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .app-banner h1 {
+        font-size: 2rem;
+    }
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    .banner-cta,
+    .contact-buttons {
+        flex-direction: column;
+    }
+    .cta-button,
+    .contact-button {
+        width: 100%;
+    }
+    .advantage-image {
+        max-width: 80%;
+    }
+    .app-showcase-gallery {
+        max-height: 200px;
+    }
+    .app-showcase-img.single-app {
+        transform: none;
+    }
+    .app-showcase-img.single-app:hover {
+        transform: translateY(-2px);
+    }
+    .process-step {
+        padding-left: 60px;
+    }
+    .step-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .step-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+    .step-number {
+        width: 25px;
+        height: 25px;
+        font-size: 0.8rem;
+    }
+    .process-highlight-item {
+        width: 45%;
+    }
+    .solutions-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    }
+    .pricing-tabs {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        border-bottom: none;
+    }
+    .pricing-tab {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid var(--background-medium);
+    }
+    .pricing-tab.active:after {
+        bottom: 0;
+    }
+    .tech-solutions-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+    .process-step {
+        padding-left: 50px;
+    }
+    .step-content {
+        padding: 15px;
+    }
+    .step-content h3 {
+        font-size: 1.1rem;
+    }
+    .step-content p {
+        font-size: 0.85rem;
+    }
+    .process-highlight-item {
+        width: 45%;
+    }
+    .highlight-icon {
+        width: 50px;
+        height: 50px;
+    }
+    .highlight-icon svg {
+        width: 25px;
+        height: 25px;
+    }
+    .process-highlight-item p {
+        font-size: 0.95rem;
+    }
+}
+
+.industry-icon {
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 5px;
+    color: var(--white);
+}
+
+.industry-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* 服務方案標題樣式 */
+
+.solutions-header h3,
+.tech-solutions-container h3,
+.mobile-app-pricing-table h3 {
+    text-align: center;
+    width: 100%;
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+/* 確保所有卡片標題居中 */
+
+.app-type-card .type-header,
+.pricing-card-header h3,
+.process-highlight-item p {
+    text-align: center;
+    width: 100%;
+}
+
+/* 服務方案圖標相關樣式調整 */
+
+.service-icons {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.service-icon-item {
+    text-align: center;
+    width: 120px;
+}
+
+.service-icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    color: white;
+    font-size: 30px;
+}
+
+.service-icon-title {
+    font-size: 16px;
+    color: #333;
+}
+
+/* 移動端特定優化 - 解決手機查看時的問題 */
+
+@media (max-width: 767px) {
+    /* 調整 APP 優勢區塊 */
+    .advantages-container {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    /* 增加圖片容器的控制 */
+    .advantage-image {
+        width: 100%;
+        max-width: 250px;
+        /* 減小移動端最大寬度 */
+        margin: 0 auto 20px;
+        order: 1;
+    }
+    /* 控制手機上的圖片尺寸 */
+    .app-showcase-gallery {
+        height: auto;
+        max-height: 250px;
+        /* 減小移動端最大高度 */
+        padding: 0;
+    }
+    /* 專為手機優化的圖片樣式 */
+    .app-showcase-img.single-app {
+        max-width: 85%;
+        /* 稍微縮小圖片寬度 */
+        transform: none !important;
+        /* 移動端強制移除旋轉 */
+        border-radius: 8px;
+        /* 移動端稍微縮小圓角 */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    /* 取消懸浮效果，避免干擾手機體驗 */
+    .app-showcase-img.single-app:hover {
+        transform: translateY(-3px) !important;
+        /* 移動端只保留上浮效果 */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    /* 調整內容區塊 */
+    .advantage-content {
+        width: 100%;
+        padding: 0;
+        order: 2;
+        gap: 15px;
+    }
+    /* 調整卡片樣式 */
+    .advantage-card {
+        padding: 12px;
+        margin-bottom: 0;
+    }
+    /* 調整圖標尺寸 */
+    .advantage-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+    }
+    /* 縮小標題和文字 */
+    .advantage-text h3 {
+        font-size: 1rem;
+        margin-bottom: 3px;
+    }
+    .advantage-text p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    /* 調整行業亮點樣式 */
+    .industry-highlights {
+        margin-top: 20px;
+        padding: 15px;
+    }
+    .highlight-text {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    /* 調整其他區塊間距 */
+    .app-section {
+        padding: 40px 15px;
+    }
+    /* 調整標題大小 */
+    .section-header h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 10px;
+    }
+    .section-subtitle {
+        font-size: 0.85rem !important;
+    }
+}
+
+/* 特別針對極小屏幕的優化 */
+
+@media (max-width: 375px) {
+    .advantage-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+    }
+    .advantage-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+    .advantage-card {
+        padding: 10px;
+    }
+    .advantage-text h3 {
+        font-size: 0.95rem;
+    }
+    .advantage-text p {
+        font-size: 0.8rem;
+    }
+    .app-section {
+        padding: 30px 12px;
+    }
+    .section-header h2 {
+        font-size: 1.4rem !important;
+    }
+    .advantage-image {
+        max-width: 220px;
+        /* 更小屏幕下進一步縮小 */
+    }
+    .app-showcase-gallery {
+        max-height: 220px;
+    }
+    .app-showcase-img.single-app {
+        max-width: 80%;
+        transform: none;
+    }
+    .app-showcase-img.single-app:hover {
+        transform: translateY(-2px) !important;
+        /* 更小屏幕減小上浮效果 */
+    }
+}

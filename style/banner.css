@@ -1,0 +1,282 @@
+:root {
+	--navbar-height-desktop: 60px;
+	--navbar-height-tablet: 56px;
+	--navbar-height-mobile: 50px;
+	--navbar-height-small: 45px;
+}
+
+.banner-container {
+	align-items: center;
+	background: linear-gradient(135deg, #036, #069);
+	box-sizing: border-box;
+	display: flex;
+	height: 450px;
+	justify-content: flex-start;
+	margin-top: 60px;
+	margin-top: var(--navbar-height-desktop);
+	overflow: hidden;
+	position: relative;
+	width: 100%
+}
+
+.banner-content {
+	position: relative;
+	flex: 1 1;
+	width: 40%;
+	margin: 0 auto;
+	padding: 0 20px;
+	max-width: 800px;
+	color: #fff;
+	text-align: center;
+	z-index: 2;
+}
+
+.banner-content h1 {
+	margin-bottom: 2rem;
+	margin-bottom: 1rem;
+	font-size: 3.5rem;
+	font-weight: 700;
+	color: #fff;
+	line-height: 1.2;
+	text-shadow: 0 2px 4px #0000001a;
+}
+
+.banner-title {
+	font-size: 2.2rem;
+	font-weight: 700;
+	line-height: 1.3;
+	margin-bottom: 1.5rem;
+	margin-top: 0;
+	text-align: left;
+}
+
+.banner-content p {
+	margin-bottom: 2.5rem;
+	font-size: 1.25rem;
+	font-size: 1.5rem;
+	color: #ffffffe6;
+	line-height: 1.6;
+	opacity: .9;
+}
+
+.banner-description {
+	margin-bottom: 2rem;
+	font-size: 1.1rem;
+	line-height: 1.7;
+	opacity: .95;
+	text-align: left;
+}
+
+
+
+.banner-image,
+.banner-image img {
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0
+}
+
+.banner-image {
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1 1;
+	width: 60%;
+	z-index: 1;
+}
+
+.banner-image:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	background: inherit;
+	background-size: cover;
+}
+
+/* 強制保持一致的banner尺寸 */
+.banner-image img[src*="webBanner"],
+.banner-image img[src*="appBanner"],
+.banner-image img[src*="sysBanner"],
+.banner-image img[src*="SemBanner"],
+.banner-image img[src*="aboutBanner"],
+.banner-image img[src*="contactBanner"] {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	transform: none;
+	min-width: unset;
+	min-height: unset;
+}
+
+.banner-image img {
+	height: auto;
+	max-width: 100%;
+	border-radius: 10px;
+	box-shadow: 0 20px 40px #0003;
+}
+
+.banner-button {
+	display: inline-block;
+	padding: .7rem 1.8rem;
+	color: #069;
+	background-color: #fff;
+	border: none;
+	border-radius: 30px;
+	box-shadow: 0 4px 6px #0000001a;
+	font-size: 1rem;
+	font-weight: 600;
+	transition: all .3s ease;
+	cursor: pointer;
+	text-decoration: none;
+}
+.banner-button:hover {
+    background-color: #f5f5f5;
+    box-shadow: 0 6px 12px #00000026;
+    transform: translateY(-2px);
+}
+
+@media (max-width:768px) {
+	.banner-container {
+		flex-direction: column;
+		height: auto;
+		margin-top: 56px;
+		margin-top: var(--navbar-height-tablet);
+		min-height: 400px;
+		padding: 2rem 0 0;
+	}
+
+	.banner-content {
+		width: 90%;
+	}
+
+	.banner-title,
+	.banner-description {
+		text-align: center;
+	}
+
+	.banner-button {
+		margin-bottom: 2rem;
+	}
+
+	.banner-image {
+		overflow: hidden;
+		position: relative;
+		right: 0;
+		top: 0;
+		width: 100%;
+		max-width: 400px;
+		height: 200px;
+		margin: 0 auto;
+	}
+
+	.banner-image img {
+		position: relative !important;
+		right: 0 !important;
+		top: 0 !important;
+		width: 100% !important;
+		height: 100% !important;
+		margin: 0 !important;
+		object-fit: cover !important;
+		object-position: center !important;
+		transform: none !important;
+	}
+}
+
+
+
+
+/* 定義導航欄高度變量
+
+.banner-container {
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	height: 450px;
+	margin-top: 60px;
+	margin-top: var(--navbar-height-desktop);
+	background: linear-gradient(135deg, #036, #069);
+	box-sizing: border-box;
+}
+
+.banner-image img[src*="webBanner"],
+.banner-image img[src*="appBanner"],
+.banner-image img[src*="sysBanner"],
+.banner-image img[src*="SemBanner"],
+.banner-image img[src*="aboutBanner"],
+.banner-image img[src*="contactBanner"] {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	transform: none;
+	min-width: unset;
+	min-height: unset;
+}
+
+.banner-image,
+.banner-image img {
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.banner-image img {
+	object-fit: cover;
+	width: 100%;
+}
+
+.banner-image img {
+	border-radius: 10px;
+	box-shadow: 0 20px 40px #0003;
+	height: auto;
+	max-width: 100%;
+}
+.banner-container {
+	align-items: center;
+	background: linear-gradient(135deg, #036, #069);
+	box-sizing: border-box;
+	display: flex;
+	height: 450px;
+	justify-content: flex-start;
+	margin-top: 60px;
+	margin-top: var(--navbar-height-desktop);
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+.banner-content {
+    margin-left: 5%;
+    padding: 0;
+    width: 40%;
+}
+.banner-image {
+    align-items: center;
+    display: flex;
+    flex: 1 1;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+.banner-image, .banner-image img {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.banner-image {
+    overflow: hidden;
+    width: 60%;
+	
+
+} */

@@ -1,0 +1,223 @@
+.navbar {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	background-color: #fff;
+	box-shadow: 0 2px 8px rgba(0, 51, 102, 0.1);
+	height: 60px;
+}
+
+.nav-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 1rem;
+	max-width: 1400px;
+	margin: 0 auto;
+	height: 100%;
+}
+
+/* Logo 容器樣式優化 */
+.logo-container {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+.zenithsoft-logo {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	height: 100%;
+	padding: 0 10px;
+}
+
+/* 圖片logo樣式，移除了背景漸變 */
+.logo-image {
+	height: 40px;
+	/* 適中的高度 */
+	width: auto;
+	object-fit: contain;
+}
+
+.zenith-text {
+	display: none;
+	/* 隱藏原文字logo */
+}
+
+.soft-text {
+	display: none;
+	/* 隱藏原文字logo */
+}
+
+/* 導航鏈接樣式 */
+.nav-links {
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+}
+
+.nav-link {
+	color: #333;
+	text-decoration: none;
+	font-size: 0.9rem;
+	font-weight: 500;
+	padding: 8px 0;
+	position: relative;
+	transition: color 0.3s ease;
+	font-family: 'PingFang TC', 'Noto Sans TC', -apple-system, sans-serif;
+	letter-spacing: 0.5px;
+}
+
+.nav-link:hover {
+	color: #006699;
+}
+
+.nav-link::after {
+	display: none;
+}
+
+/* 最後一個導航項（聯絡我們）特殊樣式 */
+.contact-link {
+	color: #006699;
+	font-weight: 600;
+}
+
+/* 右側導航部分 */
+.nav-right {
+	display: flex;
+	align-items: center;
+}
+
+/* 漢堡菜單按鈕樣式 */
+.menu-button {
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 24px;
+	height: 20px;
+	cursor: pointer;
+	margin-left: 20px;
+}
+
+.menu-button span {
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: #1e293b;
+	transition: all 0.3s ease;
+}
+@media (max-width: 1200px) {
+    .nav-links {
+        gap: 1.5rem;
+    }
+}
+/* 移動端適配 */
+@media (max-width: 768px) {
+
+	/* 導航欄容器 */
+	.navbar {
+		height: 56px;
+		display: block;
+		position: fixed !important;
+		top: 0 !important;
+		left: 0 !important;
+		width: 100% !important;
+		z-index: 9999 !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		transition: none !important;
+		box-shadow: 0 2px 8px rgba(0, 51, 102, 0.1) !important;
+	}
+
+	.nav-container {
+		padding: 0 1rem;
+		height: 56px;
+		display: flex !important;
+		justify-content: space-between !important;
+		align-items: center !important;
+	}
+
+	/* 移動端下調整logo大小 */
+	.logo-image {
+		height: 30px;
+	}
+
+	/* 右側導航部分 */
+	.nav-right {
+		display: flex;
+		align-items: center;
+	}
+
+	/* 菜單按鈕 */
+	.menu-button {
+		display: flex !important;
+	}
+
+	/* 導航菜單 - 移動版特殊樣式 */
+	.nav-links {
+		display: none;
+		position: fixed !important;
+		top: 56px !important;
+		left: 0 !important;
+		width: 100% !important;
+		flex-direction: column !important;
+		background-color: white !important;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		gap: 0 !important;
+		z-index: 9998 !important;
+		border-top: none !important;
+	}
+
+	/* 激活狀態的導航菜單 */
+	.nav-links.active {
+		display: flex !important;
+	}
+
+	/* 導航鏈接項 */
+	.nav-link {
+		width: 100% !important;
+		text-align: center !important;
+		padding: 1rem 0 !important;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+		margin: 0 !important;
+		font-size: 0.9rem !important;
+		font-weight: 400 !important;
+		opacity: 1 !important;
+		letter-spacing: 1px !important;
+	}
+
+	.nav-link:last-child {
+		border-bottom: none !important;
+	}
+
+	/* 漢堡菜單變形為X形 */
+	.menu-button.active span:nth-child(1) {
+		transform: translateY(9px) rotate(45deg) !important;
+	}
+
+	.menu-button.active span:nth-child(2) {
+		opacity: 0 !important;
+	}
+
+	.menu-button.active span:nth-child(3) {
+		transform: translateY(-9px) rotate(-45deg) !important;
+	}
+}
+
+/* 大屏幕優化 */
+@media (min-width: 1200px) {
+	.nav-container {
+		padding: 0 1rem;
+		max-width: 1400px;
+	}
+
+	.nav-link {
+		font-size: 0.9rem;
+		letter-spacing: 1px;
+	}
+}

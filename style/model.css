@@ -2941,10 +2941,12 @@ textarea {
 		margin-top: 12px;
 		order: -1;
 		transform: none;
-	}    .packages-container {
-        align-items: center;
-        flex-direction: column;
-    }
+	}
+
+	.packages-container {
+		align-items: center;
+		flex-direction: column;
+	}
 
 }
 
@@ -3373,4 +3375,217 @@ textarea {
 		max-width: 300px;
 		width: 100%;
 	}
+}
+
+/* about */
+.about-section {
+	padding: 80px 5%;
+}
+
+.company-intro {
+	background-color: #fff;
+}
+
+.section-content {
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+.about-section h2 {
+	color: #036;
+	color: var(--primary-dark);
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-bottom: 2rem;
+	text-align: center;
+}
+
+.intro-text {
+	color: #666;
+	font-size: 1.2rem;
+	line-height: 1.8;
+	margin: 0 auto 3rem;
+	max-width: 800px;
+	text-align: center;
+}
+
+@media (max-width: 768px) {
+	.about-section h2 {
+		font-size: 2rem;
+	}
+}
+
+.core-values {
+	background-color: #f8fafc;
+}
+
+.values-grid {
+	grid-gap: 30px;
+	display: grid;
+	gap: 30px;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	margin-top: 40px;
+}
+
+.value-item {
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 4px 6px #0066990d;
+	padding: 30px;
+	transition: transform .3s ease;
+}
+
+.value-icon {
+	color: #069;
+	color: var(--primary-color);
+	height: 50px;
+	margin-bottom: 20px;
+	width: 50px;
+}
+
+.value-item h3 {
+	color: #036;
+	color: var(--primary-dark);
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+}
+
+.value-item p {
+	color: #666;
+	line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+
+	.advantages-list,
+	.tech-grid,
+	.values-grid,
+	.workflow-steps {
+		grid-template-columns: 1fr;
+	}
+}
+
+.tech-support {
+	background-color: #fff;
+}
+
+.tech-grid {
+	grid-gap: 40px;
+	display: grid;
+	gap: 40px;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	margin-top: 40px;
+}
+
+.tech-category {
+	background: #f8fafc;
+	border-radius: 12px;
+	box-shadow: 0 4px 6px #0066990d;
+	padding: 30px;
+	transition: transform .3s ease;
+}
+
+.tech-category h3 {
+	color: #069;
+	color: var(--primary-color);
+	font-size: 1.3rem;
+	font-weight: 600;
+	margin-bottom: 1.5rem;
+	text-align: center;
+}
+
+.tech-icons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	justify-content: center;
+}
+
+.tech-icon {
+	font-size: 2.5rem;
+	margin: 10px;
+	transition: transform .3s ease, color .3s ease;
+}
+
+.html {
+	color: #E34F26;
+}
+
+.css {
+	color: #1572B6;
+}
+
+.react {
+	color: #61DAFB;
+}
+
+.vue {
+	color: #4FC08D;
+}
+
+.angular {
+	color: #DD0031;
+}
+
+.typescript {
+	color: #3178C6;
+}
+
+.nodejs {
+	color: #339933;
+}
+
+.python {
+	color: #3776AB;
+}
+
+.java {
+	color: #007396;
+}
+
+.mongodb {
+	color: #47A248;
+}
+
+.postgresql {
+	color: #336791;
+}
+
+.mysql {
+	color: #4479A1;
+}
+
+.firebase {
+	color: #FFCA28;
+}
+
+.aws {
+	color: #FF9900;
+}
+
+.gcp {
+	color: #4285F4;
+}
+
+.azure {
+	color: #0078D4;
+}.value-item:hover {
+    box-shadow: 0 15px 30px #0066991a;
+    transform: translateY(-5px);
+}.tech-category:hover {
+    box-shadow: 0 15px 30px #0066991a;
+    transform: translateY(-5px);
+}.tech-icon:hover {
+    color: #069 !important;
+    color: var(--primary-color) !important;
+    transform: scale(1.2);
+}@media (max-width: 768px) {
+    .about-section h2 {
+        font-size: 2rem;
+    }    .tech-icon {
+        font-size: 2rem;
+    }    .advantages-list, .tech-grid, .values-grid, .workflow-steps {
+        grid-template-columns: 1fr;
+    }
 }

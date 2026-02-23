@@ -5,7 +5,7 @@ navbar.innerHTML = `
 <div class="nav-container">
 	<div class="logo-container">
 		<a class="zenithsoft-logo" href="index.html">
-			<img class="logo-image" src="../images/logo.jpg" alt="CELESTIAL125">
+			<img class="logo-image" src="../images/logo.png" alt="CELESTIAL125">
 		</a>
 	</div>
 	<div class="nav-right">

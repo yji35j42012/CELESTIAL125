@@ -44,30 +44,43 @@
 									<div class="form-section"><label class="section-label">稱謂 <span
 												class="required">*</span></label>
 										<div class="title-options">
-											<div class="title-option selected"><input type="radio" name="title"
-													value="先生" checked=""><span>先生</span></div>
-											<div class="title-option "><input type="radio" name="title"
-													value="女士"><span>女士</span></div>
+											<label class="title-option selected">
+												<input type="radio" name="title" value="先生" checked>
+												<span>先生</span>
+											</label>
+											<label class="title-option">
+												<input type="radio" name="title" value="女士">
+												<span>女士</span>
+											</label>
 										</div>
 									</div>
 									<div class="form-row">
-										<div class="form-group"><label class="section-label">名字 <span
-													class="required">*</span></label><input type="text" name="firstName"
-												class="form-input " placeholder="請輸入名字" autocomplete="off"
-												autocorrect="off" value=""></div>
-										<div class="form-group"><label class="section-label">姓氏 <span
-													class="required">*</span></label><input type="text" name="lastName"
-												class="form-input " placeholder="請輸入姓氏" autocomplete="off"
-												autocorrect="off" value=""></div>
+										<div class="form-group">
+											<label class="section-label">
+												名字 <span class="required">*</span>
+											</label>
+											<input type="text" name="firstName" class="form-input" placeholder="請輸入名字" required>
+										</div>
+										<div class="form-group">
+											<label class="section-label">
+												姓氏 <span class="required">*</span>
+											</label>
+											<input type="text" name="lastName" class="form-input " placeholder="請輸入姓氏" required>
+										</div>
 									</div>
 									<div class="form-row">
-										<div class="form-group"><label class="section-label">電郵地址 <span
-													class="required">*</span></label><input type="email" name="email"
-												class="form-input " placeholder="請輸入電郵地址" autocomplete="off"
-												autocorrect="off" value=""></div>
-										<div class="form-group"><label class="section-label">電話號碼 <span
-													class="required">*</span></label>
-											<div class="phone-group"><select class="country-code" name="phoneCountry">
+										<div class="form-group">
+											<label class="section-label">
+												電郵地址 <span class="required">*</span>
+											</label>
+											<input type="email" name="email" class="form-input" placeholder="請輸入電郵地址" required>
+										</div>
+										<div class="form-group">
+											<label class="section-label">
+												電話號碼 <span class="required">*</span>
+											</label>
+											<div class="phone-group">
+												<select class="country-code" name="phoneCountry">
 													<option value="+852">+852</option>
 													<option value="+86">+86</option>
 													<option value="+1">+1</option>
@@ -76,33 +89,46 @@
 													<option value="+65">+65</option>
 													<option value="+60">+60</option>
 													<option value="+886">+886</option>
-												</select><input type="tel" name="phoneNumber"
-													class="form-input phone-input " placeholder="請輸入電話號碼"
-													autocomplete="off" autocorrect="off" value=""></div>
+												</select>
+												<input type="tel" name="phoneNumber" class="form-input phone-input" placeholder="請輸入電話號碼" required>
+											</div>
 										</div>
 									</div>
-									<div class="form-section"><label class="section-label">公司名稱</label><input
-											type="text" name="company" class="form-input" placeholder="請輸入公司名稱"
-											autocomplete="off" autocorrect="off" value=""></div>
-									<div class="form-section"><label class="section-label">服務項目 <span
-												class="required">*</span></label>
+									<div class="form-section">
+										<label class="section-label">公司名稱</label>
+										<input type="text" name="company" class="form-input" placeholder="請輸入公司名稱">
+									</div>
+									<div class="form-section">
+										<label class="section-label">
+											服務項目 <span class="required">*</span>
+										</label>
 										<div class="services-row">
-											<div class="service-option "><input type="checkbox"
-													name="webDevelopment"><span>網頁開發</span></div>
-											<div class="service-option "><input type="checkbox"
-													name="systemDevelopment"><span>系統開發</span></div>
-											<div class="service-option "><input type="checkbox"
-													name="programDevelopment"><span>程序開發</span></div>
-											<div class="service-option "><input type="checkbox"
-													name="semSeo"><span>SEM&amp;SEO</span></div>
+											<div class="service-option">
+												<input type="checkbox" name="services[]" value="webDevelopment">
+												<span>網頁開發</span>
+											</div>
+											<div class="service-option">
+												<input type="checkbox" name="services[]" value="systemDevelopment">
+												<span>系統開發</span>
+											</div>
+											<div class="service-option">
+												<input type="checkbox" name="services[]" value="programDevelopment">
+												<span>程序開發</span>
+											</div>
+											<div class="service-option">
+												<input type="checkbox" name="services[]" value="semSeo">
+												<span>SEM&amp;SEO</span>
+											</div>
 										</div>
 									</div>
 
-									<div class="form-section"><label class="section-label">留言 <span
-												class="required">*</span></label><textarea name="message"
-											class="form-textarea " placeholder="請輸入留言" autocomplete="off"
-											autocorrect="off" rows="5"></textarea></div><button type="submit"
-										class="submit-button">提交</button>
+									<div class="form-section">
+										<label class="section-label">
+											留言 <span class="required">*</span>
+										</label>
+										<textarea name="message" class="form-textarea" placeholder="請輸入留言" autocomplete="off" autocorrect="off" rows="5" required></textarea>
+									</div>
+									<button type="submit" class="submit-button">提交</button>
 								</form>
 							</div>
 						</div>
@@ -169,7 +195,6 @@
 
 
 	<script src="./js/navbar.js"></script>
-
 	<script>
 		var pricing_tabs = document.querySelectorAll("#pricing_tabs button");
 		var scale_plans = document.querySelector("#scale_plans");
@@ -190,6 +215,30 @@
 				}
 			}
 		}
+
+		// 稱謂選擇切換
+		const radios = document.querySelectorAll('input[name="title"]');
+		function updateSelected() {
+			radios.forEach(radio => {
+				const label = radio.closest('.title-option');
+				label.classList.toggle('selected', radio.checked);
+			});
+		}
+		updateSelected();
+		// 監聽切換
+		radios.forEach(radio => {
+			radio.addEventListener('change', updateSelected);
+		});
+
+		// 服務項目至少勾選一項
+		document.querySelector("form").addEventListener("submit", function (e) {
+			const checked = document.querySelectorAll('input[name="services[]"]:checked');
+			if (checked.length == 0) {
+				e.preventDefault();
+				alert("請至少選擇一項服務項目");
+			}
+		});
+
 	</script>
 </body>
 

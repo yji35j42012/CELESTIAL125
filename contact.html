@@ -40,16 +40,16 @@
 									<h1>聯絡我們</h1>
 									<p class="form-subtitle">讓我們了解你的需求</p>
 								</div>
-								<form>
+								<form id="contactForm">
 									<div class="form-section"><label class="section-label">稱謂 <span
 												class="required">*</span></label>
 										<div class="title-options">
 											<label class="title-option selected">
-												<input type="radio" name="title" value="先生" checked>
+												<input type="radio" name="gender" value="先生" checked>
 												<span>先生</span>
 											</label>
 											<label class="title-option">
-												<input type="radio" name="title" value="女士">
+												<input type="radio" name="gender" value="女士">
 												<span>女士</span>
 											</label>
 										</div>
@@ -80,7 +80,7 @@
 												電話號碼 <span class="required">*</span>
 											</label>
 											<div class="phone-group">
-												<select class="country-code" name="phoneCountry">
+												<select class="country-code" name="country">
 													<option value="+852">+852</option>
 													<option value="+86">+86</option>
 													<option value="+1">+1</option>
@@ -90,7 +90,7 @@
 													<option value="+60">+60</option>
 													<option value="+886">+886</option>
 												</select>
-												<input type="tel" name="phoneNumber" class="form-input phone-input" placeholder="請輸入電話號碼" required>
+												<input type="tel" name="phone" class="form-input phone-input" placeholder="請輸入電話號碼" required>
 											</div>
 										</div>
 									</div>
@@ -104,19 +104,19 @@
 										</label>
 										<div class="services-row">
 											<div class="service-option">
-												<input type="checkbox" name="services[]" value="webDevelopment">
+												<input type="checkbox" name="services[]" value="網頁開發">
 												<span>網頁開發</span>
 											</div>
 											<div class="service-option">
-												<input type="checkbox" name="services[]" value="systemDevelopment">
+												<input type="checkbox" name="services[]" value="系統開發">
 												<span>系統開發</span>
 											</div>
 											<div class="service-option">
-												<input type="checkbox" name="services[]" value="programDevelopment">
+												<input type="checkbox" name="services[]" value="程序開發">
 												<span>程序開發</span>
 											</div>
 											<div class="service-option">
-												<input type="checkbox" name="services[]" value="semSeo">
+												<input type="checkbox" name="services[]" value="SEM&SEO">
 												<span>SEM&amp;SEO</span>
 											</div>
 										</div>
@@ -217,7 +217,7 @@
 		}
 
 		// 稱謂選擇切換
-		const radios = document.querySelectorAll('input[name="title"]');
+		const radios = document.querySelectorAll('input[name="gender"]');
 		function updateSelected() {
 			radios.forEach(radio => {
 				const label = radio.closest('.title-option');
@@ -231,12 +231,32 @@
 		});
 
 		// 服務項目至少勾選一項
-		document.querySelector("form").addEventListener("submit", function (e) {
+		const form = document.querySelector('#contactForm');
+		form.addEventListener("submit", async function (e) {
+			e.preventDefault(); // 阻止跳轉
 			const checked = document.querySelectorAll('input[name="services[]"]:checked');
 			if (checked.length == 0) {
-				e.preventDefault();
 				alert("請至少選擇一項服務項目");
 			}
+
+
+			const formData = new FormData(form);
+			try {
+				const response = await fetch('../send.php', {
+					method: 'POST',
+					body: formData
+				});
+
+				const result = await response.json();
+				if (result.data) {
+					alert("感謝您的填寫");
+					form.reset();
+				}
+
+			} catch (error) {
+				console.error(error);
+			}
+
 		});
 
 	</script>

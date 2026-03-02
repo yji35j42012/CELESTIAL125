@@ -32,7 +32,7 @@
 					</div>
 				</div>
 
-				<div class="contact-container">
+				<div class="contact-container" id="formSend">
 					<div class="form-card">
 						<div class="contact-container">
 							<div class="contact-form-wrapper">
@@ -148,7 +148,7 @@
 					</div>
 				</div>
 
-				<div class="contact-container" style="display: none;">
+				<div class="contact-container" style="display: none;" id="thankSend">
 					<div class="form-card">
 						<div class="contact-container">
 							<div class="contact-form-wrapper">
@@ -162,7 +162,7 @@
 									data-gtm-vis-total-visible-time219995473_8="100"
 									data-gtm-vis-has-fired219995473_8="1">
 									<h2>謝謝您的查詢！</h2>
-									<p>我們已收到您的訊息，將會盡快回覆您。</p><button class="submit-button">提交另一份表單</button>
+									<p>我們已收到您的訊息，將會盡快回覆您。</p><button class="submit-button" id="removeFrom">提交另一份表單</button>
 								</div>
 							</div>
 						</div>
@@ -237,8 +237,8 @@
 			const checked = document.querySelectorAll('input[name="services[]"]:checked');
 			if (checked.length == 0) {
 				alert("請至少選擇一項服務項目");
+				return;
 			}
-
 
 			const formData = new FormData(form);
 			try {
@@ -248,8 +248,10 @@
 				});
 
 				const result = await response.json();
+				console.log(result)
 				if (result.data) {
-					alert("感謝您的填寫");
+					document.querySelector('#formSend').style.display = "none";
+					document.querySelector('#thankSend').style.display = "";
 					form.reset();
 				}
 
@@ -259,6 +261,11 @@
 
 		});
 
+		document.querySelector('#removeFrom').addEventListener('click',()=>{
+			form.reset();
+			document.querySelector('#formSend').style.display = "";
+			document.querySelector('#thankSend').style.display = "none";
+		})
 	</script>
 </body>
 

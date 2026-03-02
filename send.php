@@ -32,7 +32,7 @@ $body = '
             <td style="background:#222;color:#ffffff;padding:20px;">
               <h2 style="margin:0;font-size:20px;">【獲取報價】</h2>
               <p style="margin:5px 0 0;font-size:13px;color:#cccccc;">
-                citybliss376.com
+                celestial125.com
               </p>
             </td>
           </tr>
@@ -109,9 +109,8 @@ $body = '
 ';
 
 // 目標信箱陣列
-// 'iopiop0806@gmail.com'
 $recipients = [
-    'redsinsue@gmail.com'
+    'iopiop0806@gmail.com'
 ];
 
 // 郵件主題

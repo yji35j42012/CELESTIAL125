@@ -5652,3 +5652,14 @@ textarea {
     padding: 40px 20px;
     text-align: center;
 }
+
+
+.app-page-container{
+	margin: 0 auto;
+    max-width: 1440px;
+    overflow: hidden;
+    width: 100%;
+}
+.app-page-container .process-timeline{
+	display: block;
+}

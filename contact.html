@@ -242,24 +242,10 @@
 			}
 
 			const formData = new FormData(form);
-			try {
-				const response = await fetch('../send.php', {
-					method: 'POST',
-					body: formData
-				});
-
-				const result = await response.json();
-				console.log(result)
-				if (result.data) {
-					document.querySelector('#formSend').style.display = "none";
-					document.querySelector('#thankSend').style.display = "";
-					form.reset();
-				}
-
-			} catch (error) {
-				console.error(error);
-			}
-
+			fetch('../send.php', { method: 'POST', body: formData});
+			form.reset();
+			document.querySelector('#formSend').style.display = "none";
+			document.querySelector('#thankSend').style.display = "";		
 		});
 
 		document.querySelector('#removeFrom').addEventListener('click',()=>{
